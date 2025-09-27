@@ -150,53 +150,7 @@
 							</div>
             </div>
           </div>
-        </div>var gr = {
-  "invoice": {
-    "invoice_number": "4421681084",
-    "consignor_address": "56 & 57 Hadapsar Industrial Estate 411013 PUNE-PUNE India",
-    "third_party_address": "Delft NL",
-    "invoice_value": "561,00",
-    "invoice_currency": "EUR",
-    "consignor_name": "Honeywell Automation India Limited",
-    "third_party_name": "Honeywell Enraf B.V.",
-    "invoice_date": "03-26-2025",
-    "items": [
-      {
-        "cntry_of_orig": "Netherlands",
-        "unit_price": "534,00",
-        "item_description": "854 Force transducer",
-        "quantit0": "1",
-        "item_value": "534,00",
-        "item_code": "S0854485",
-        "hsn": "90269000"
-      },
-      {
-        "cntry_of_orig": "Netherlands",
-        "unit_price": "27,00",
-        "item_description": "MEASURING WIRE AISI 316 30 METER",
-        "quantit0": "1",
-        "item_value": "27,00",
-        "item_code": "S0802801",
-        "hsn": "73262000"
-      }
-    ]
-  }
-};
-
-gs.info(typeof(gr.invoice.invoice_date));
-var inputDate=gr.invoice.invoice_date;
-var parts = inputDate.split("-");
-    var formattedDate = parts[2] + "-" + parts[0] + "-" + parts[1]; // 2025-03-26
-	gs.info("formatted date : "+ formattedDate)
-var invGR = new GlideRecord('x_satr_project_a_0_invoice_details');
-invGR.addQuery('sys_id','1c1d665093d83210a36507dbd7373c14');
-invGR.query();
-if(invGR.next()){
-	invGR.invoice_date = formattedDate;
-	
-	invGR.update();
-	gs.info("New Date: "+ invGR.invoice_date);
-}
+        </div>
       </div>
       <div class="mouse">
 				<a href="#" class="mouse-icon">
